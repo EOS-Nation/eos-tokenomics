@@ -37,19 +37,17 @@ $ shasum -a 256 ./build/contracts/eosio.fees/eosio.fees.wasm
 
 ## MSIG Schedules
 
-### MSIG - [`newaccounts`](https://bloks.io/msig/eosnationftw/newaccounts) & [`tokenomics`](https://bloks.io/msig/larosenonaka/tokenomics)
-
+### MSIG Step 1 - New system accounts
 > https://bloks.io/msig/eosnationftw/newaccounts
-> https://bloks.io/msig/larosenonaka/tokenomics
 
-### Step 1 - New system accounts
-Create new accounts for:
+Create new systems accounts for:
 - `eosio.fees` (15/21) (`eosio`)
 - `eosio.reward` (15/21) (`eosio`)
 - `eosio.mware` (2/2) (`larosenonaka` + `winston1efm1`)
 - `market.wram` (2/2) (`larosenonaka` + `winston1efm1`)
 
-### Step 2 - [`upgrade.v3.4` contracts](https://github.com/eosnetworkfoundation/eos-system-contracts/releases/tag/v3.4.0) & EOS Tokenomics
+### MSIG Step 2 - [`upgrade.v3.4` contracts](https://github.com/eosnetworkfoundation/eos-system-contracts/releases/tag/v3.4.0) & EOS Tokenomics
+> https://bloks.io/msig/larosenonaka/tokenomics
 
 #### Deploy new v3.4.0 system contracts
 1.1. Deploy new `eosio` system contract
