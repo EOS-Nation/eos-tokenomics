@@ -121,7 +121,7 @@ Create new accounts for:
 ]
 ```
 
-5.4. Set `eosio.savings` ratio for Staking Rewards/ENF/Labs (51.54% / 30.95% / 17.51%)
+5.4. Set `eosio.savings` ratio for Staking Rewards/ENF/Labs (53.71% / 29.55% / 16.74%)
 
 **setdistrib**
 ```json
