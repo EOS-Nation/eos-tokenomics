@@ -7,17 +7,13 @@ owner:
     weight: 1
 
 active:
-  threshold: 2
+  threshold: 1
   accounts:
   - permission:
-      actor: enf
+      actor: eosio
       permission: active
     weight: 1
   - permission:
       actor: eosio.fees
       permission: eosio.code
-    weight: 2
-  - permission:
-      actor: eosio.prods
-      permission: prod.minor
     weight: 1

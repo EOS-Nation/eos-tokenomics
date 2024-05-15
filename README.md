@@ -44,8 +44,8 @@ $ shasum -a 256 ./build/contracts/eosio.fees/eosio.fees.wasm
 
 ### Step 1 - New system accounts
 Create new accounts for:
-- `eosio.fees` (8+1/21) (`eosio@prod.minor` + `enf`)
-- `eosio.reward` (8+1/21) (`eosio@prod.minor` + `enf`)
+- `eosio.fees` (15/21) (`eosio@active`)
+- `eosio.reward` (15/21) (`eosio@active`)
 - `eosio.mware` (2/2) (`larosenonaka` + `winston1efm1`)
 - `market.wram` (2/2) (`larosenonaka` + `winston1efm1`)
 
@@ -59,7 +59,7 @@ Create new accounts for:
 #### B1 unvest
 2.1. Unvest B1 tokens (35M EOS NET + 29.6M EOS CPU)
 
-**unvest**
+**eosio::unvest**
 ```json
 {
     "account": "b1",
@@ -73,7 +73,7 @@ Create new accounts for:
 #### Set Max Supply
 3.1. Set max supply 2.1B
 
-**setmaxsupply**
+**eosio.token::setmaxsupply**
 ```json
 {
     "issuer": "eosio",
@@ -82,7 +82,7 @@ Create new accounts for:
 ```
 
 3.2. Issue fixed supply up to 2.1B (expected ~972M EOS)
-**issuefixed**
+**eosio.token::issuefixed**
 ```json
 {
     "to": "eosio",
@@ -97,9 +97,14 @@ Create new accounts for:
 4.5. Remaining ~607M EOS in `eosio` to be distributed via producer pay & `eosio.saving`
 
 #### Set vesting
-5.2. Adjust `inflation_pay_factor=60767` factor ratio to 16.46/83.54% producer (**bpay** & **vpay**) / `eosio.saving` (Rewards, ENF & Labs)
+5.2. Adjust `inflation_pay_factor=60767` factor ratio to:
 
-**setpayfactor**
+| ratio  | receiver |
+|--------|----------|
+| 16.46% | block producers (**bpay** & **vpay**)
+| 83.54% | `eosio.saving` (Rewards, ENF & Labs)
+
+**eosio::setpayfactor**
 ```json
 {
     "inflation_pay_factor": 60767,
@@ -109,7 +114,7 @@ Create new accounts for:
 
 5.3. Set 4 year halvening schedules (up to 20 years, 6 schedules)
 
-**setschedule** (multiple actions)
+**eosio::setschedule** (multiple actions)
 ```json
 [
   {"start_time": "2024-06-01T00:00:00Z", "continuous_rate": 0.03617097},
@@ -121,9 +126,24 @@ Create new accounts for:
 ]
 ```
 
-5.4. Set `eosio.savings` ratio for Staking Rewards/ENF/Labs (53.71% / 29.55% / 16.74%)
+5.4. Execute next schedule
+**eosio::execschedule** (no payload)
+```
+{}
+```
 
-**setdistrib**
+5.5. Set MSIG execution time
+
+**time.eosn::checktime**
+```json
+{
+    "time": "2024-06-01T00:00:00.000Z"
+}
+```
+
+5.5. Set `eosio.savings` ratio for Staking Rewards/ENF/Labs (53.71% / 29.55% / 16.74%)
+
+**eosio.saving::setdistrib**
 ```json
 [
   {"account": "eosio.reward", "percent": 5371},
@@ -135,7 +155,7 @@ Create new accounts for:
 #### Configure System Fees
 6.1 Set incoming fees to 100% go to REX via `donatetorex` strategy
 
-**setstrategy**
+**eosio.fees::setstrategy**
 ```json
 {
     "strategy": "donatetorex",
