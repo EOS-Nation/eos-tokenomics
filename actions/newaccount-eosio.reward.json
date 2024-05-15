@@ -1,7 +1,7 @@
 {"chain_id":"aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906",
-  "expiration": "2024-08-23T17:02:17",
-  "ref_block_num": 60319,
-  "ref_block_prefix": 788504126,
+  "expiration": "2024-08-23T17:18:56",
+  "ref_block_num": 62316,
+  "ref_block_prefix": 2696112798,
   "max_net_usage_words": 0,
   "max_cpu_usage_ms": 0,
   "delay_sec": 0,
@@ -16,7 +16,7 @@
           "permission": "active"
         }
       ],
-      "data": "0000000000ea305590aee1ea02ea30550100000000010000000000ea305500000000a8ed32320100000100000000020000000000ea305500000000a8ed3232010090aee1ea02ea305500804a1401ea3055010000"
+      "data": "0000000000ea305590aee1ea02ea30550100000000010000000000ea305500000000a8ed323201000001000000000190aee1ea02ea305500804a1401ea3055010000"
     },
     {
       "account": "eosio",

@@ -44,8 +44,8 @@ $ shasum -a 256 ./build/contracts/eosio.fees/eosio.fees.wasm
 
 ### Step 1 - New system accounts
 Create new accounts for:
-- `eosio.fees` (15/21) (`eosio@active`)
-- `eosio.reward` (15/21) (`eosio@active`)
+- `eosio.fees` (15/21) (`eosio`)
+- `eosio.reward` (15/21) (`eosio`)
 - `eosio.mware` (2/2) (`larosenonaka` + `winston1efm1`)
 - `market.wram` (2/2) (`larosenonaka` + `winston1efm1`)
 
