@@ -47,50 +47,6 @@
                 }
             ],
             "data": "0000000000ea305590aee1ea02ea305500200300"
-        },
-        {
-            "account": "eosio",
-            "name": "newaccount",
-            "authorization": [
-                {
-                    "actor": "eosio",
-                    "permission": "active"
-                }
-            ],
-            "data": "0000000000ea305500d4355c02ea30550100000000010000000000ea305500000000a8ed323201000002000000000260a099742a4caf8900000000a8ed3232010010e45261d28ca7e300000000a8ed3232010000"
-        },
-        {
-            "account": "eosio",
-            "name": "buyrambytes",
-            "authorization": [
-                {
-                    "actor": "eosio",
-                    "permission": "active"
-                }
-            ],
-            "data": "0000000000ea305500d4355c02ea305500100000"
-        },
-        {
-            "account": "eosio",
-            "name": "newaccount",
-            "authorization": [
-                {
-                    "actor": "eosio",
-                    "permission": "active"
-                }
-            ],
-            "data": "0000000000ea3055000090e67290a65e0100000000010000000000ea305500000000a8ed323201000002000000000260a099742a4caf8900000000a8ed3232010010e45261d28ca7e300000000a8ed3232010000"
-        },
-        {
-            "account": "eosio",
-            "name": "buyrambytes",
-            "authorization": [
-                {
-                    "actor": "eosio",
-                    "permission": "active"
-                }
-            ],
-            "data": "0000000000ea3055000090e67290a65e00100000"
         }
     ]
 }
