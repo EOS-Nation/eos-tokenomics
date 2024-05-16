@@ -7,13 +7,9 @@ owner:
     weight: 1
 
 active:
-  threshold: 2
+  threshold: 1
   accounts:
   - permission:
-      actor: larosenonaka
-      permission: active
-    weight: 1
-  - permission:
-      actor: winston1efm1
+      actor: eosio
       permission: active
     weight: 1

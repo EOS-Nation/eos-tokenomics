@@ -1,7 +1,7 @@
 {"chain_id":"aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906",
-  "expiration": "2024-08-23T17:18:58",
-  "ref_block_num": 62323,
-  "ref_block_prefix": 1379285738,
+  "expiration": "2024-08-24T09:46:55",
+  "ref_block_num": 49677,
+  "ref_block_prefix": 2002795603,
   "max_net_usage_words": 0,
   "max_cpu_usage_ms": 0,
   "delay_sec": 0,
@@ -16,7 +16,7 @@
           "permission": "active"
         }
       ],
-      "data": "0000000000ea305500a4b91c6405af910100000000010000000000ea305500000000a8ed323201000002000000000260a099742a4caf8900000000a8ed3232010010e45261d28ca7e300000000a8ed3232010000"
+      "data": "0000000000ea3055000090e67290a65e0100000000010000000000ea305500000000a8ed32320100000100000000010000000000ea305500000000a8ed3232010000"
     },
     {
       "account": "eosio",
@@ -27,7 +27,7 @@
           "permission": "active"
         }
       ],
-      "data": "0000000000ea305500a4b91c6405af9100100000"
+      "data": "0000000000ea3055000090e67290a65e00100000"
     }
   ],
   "transaction_extensions": [],

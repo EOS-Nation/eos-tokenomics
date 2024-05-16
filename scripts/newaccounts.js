@@ -2,7 +2,7 @@ import * as fs from "fs";
 import fees from '../actions/newaccount-eosio.fees.json';
 import reward from '../actions/newaccount-eosio.reward.json';
 import mware from '../actions/newaccount-eosio.mware.json';
-import wram from '../actions/newaccount-market.wram.json';
+import wram from '../actions/newaccount-fund.wram.json';
 
 const actions = [];
 for ( const newaccount of [ fees, reward, mware, wram ] ) {
