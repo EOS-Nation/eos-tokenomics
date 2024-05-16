@@ -43,8 +43,8 @@ $ shasum -a 256 ./build/contracts/eosio.fees/eosio.fees.wasm
 Create new systems accounts for:
 - `eosio.fees` (15/21) (`eosio`)
 - `eosio.reward` (15/21) (`eosio`)
-- `eosio.mware` (15/21) (`eosio`)
-- `fund.wram` (15/21) (`eosio`)
+- `eosio.mware` (2/2) (`larosenonaka` + `winston1efm1`)
+- `fund.wram` (2/2) (`larosenonaka` + `winston1efm1`)
 
 ### MSIG Step 2 - [`upgrade.v3.4` contracts](https://github.com/eosnetworkfoundation/eos-system-contracts/releases/tag/v3.4.0) & EOS Tokenomics
 > https://bloks.io/msig/larosenonaka/tokenomics
@@ -160,7 +160,3 @@ Create new systems accounts for:
     "weight": 10000
 }
 ```
-
-### MSIG Step 3 - Update RAM fund permissions
-
-> TBD
