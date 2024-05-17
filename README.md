@@ -83,9 +83,9 @@ Create new systems accounts for:
 }
 ```
 
-#### Transfer EOS to buckets
+#### Transfer to EOS Distribution
 
-4.1. Create new bucket accounts
+4.1. Create new distribution accounts
 - `eosio.mware` (2/2) (`larosenonaka` + `winston1efm1`)
 - `fund.wram` (2/2) (`larosenonaka` + `winston1efm1`)
 
