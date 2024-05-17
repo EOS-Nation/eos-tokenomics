@@ -1,0 +1,120 @@
+{
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT ",
+    "version": "eosio::abi/1.2",
+    "types": [],
+    "structs": [
+        {
+            "name": "delstrategy",
+            "base": "",
+            "fields": [
+                {
+                    "name": "strategy",
+                    "type": "name"
+                }
+            ]
+        },
+        {
+            "name": "distribute",
+            "base": "",
+            "fields": []
+        },
+        {
+            "name": "init",
+            "base": "",
+            "fields": [
+                {
+                    "name": "epoch_period",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "name": "setstrategy",
+            "base": "",
+            "fields": [
+                {
+                    "name": "strategy",
+                    "type": "name"
+                },
+                {
+                    "name": "weight",
+                    "type": "uint16"
+                }
+            ]
+        },
+        {
+            "name": "settings_row",
+            "base": "",
+            "fields": [
+                {
+                    "name": "epoch_time_interval",
+                    "type": "uint32"
+                },
+                {
+                    "name": "next_epoch_timestamp",
+                    "type": "time_point_sec"
+                }
+            ]
+        },
+        {
+            "name": "strategies_row",
+            "base": "",
+            "fields": [
+                {
+                    "name": "strategy",
+                    "type": "name"
+                },
+                {
+                    "name": "weight",
+                    "type": "uint16"
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name": "delstrategy",
+            "type": "delstrategy",
+            "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: delstrategy\nsummary: 'delstrategy'\nicon: https://gateway.pinata.cloud/ipfs/QmZ4HSZDuSrZ4BHawtZRhVfwyYJ4DepNJqVDzxY59KveiM#3830f1ce8cb07f7757dbcf383b1ec1b11914ac34a1f9d8b065f07600fa9dac19\n---"
+        },
+        {
+            "name": "distribute",
+            "type": "distribute",
+            "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Distribute\nsummary: 'distribute'\nicon: https://gateway.pinata.cloud/ipfs/QmZ4HSZDuSrZ4BHawtZRhVfwyYJ4DepNJqVDzxY59KveiM#3830f1ce8cb07f7757dbcf383b1ec1b11914ac34a1f9d8b065f07600fa9dac19\n---\n\nDistribute the system fee to the corresponding account."
+        },
+        {
+            "name": "init",
+            "type": "init",
+            "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: init\nsummary: 'init'\nicon: https://gateway.pinata.cloud/ipfs/QmZ4HSZDuSrZ4BHawtZRhVfwyYJ4DepNJqVDzxY59KveiM#3830f1ce8cb07f7757dbcf383b1ec1b11914ac34a1f9d8b065f07600fa9dac19\n---"
+        },
+        {
+            "name": "setstrategy",
+            "type": "setstrategy",
+            "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: setstrategy\nsummary: 'setstrategy'\nicon: https://gateway.pinata.cloud/ipfs/QmZ4HSZDuSrZ4BHawtZRhVfwyYJ4DepNJqVDzxY59KveiM#3830f1ce8cb07f7757dbcf383b1ec1b11914ac34a1f9d8b065f07600fa9dac19\n---"
+        }
+    ],
+    "tables": [
+        {
+            "name": "settings",
+            "type": "settings_row",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
+        {
+            "name": "strategies",
+            "type": "strategies_row",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        }
+    ],
+    "ricardian_clauses": [
+        {
+            "id": "UserAgreement",
+            "body": "The `eosio.fees` contract handles system fee distribution."
+        }
+    ],
+    "variants": [],
+    "action_results": []
+}

@@ -25,14 +25,10 @@ export CDT_INSTALL_DIR="<path>/cdt/build"
 ```
 
 ```bash
-$ shasum -a 256 ./build/contracts/eosio.system/eosio.system.wasm
-a2d...930  ./build/contracts/eosio.system/eosio.system.wasm
-
-$ shasum -a 256 ./build/contracts/eosio.token/eosio.token.wasm
-ecb...8bb  ./contracts/eosio.token/eosio.token.wasm
-
-$ shasum -a 256 ./build/contracts/eosio.fees/eosio.fees.wasm
-9bd...3e8  ./contracts/eosio.fees/eosio.fees.wasm
+$ shasum -a 256 ./build/contracts/**/*.wasm
+98343fddab84870825bf030848797166031709b3a0e8c68932b882078f062e1f  ./build/contracts/eosio.fees/eosio.fees.wasm
+4b872c873f970a852d0c4f343c0ef6bacb4a0c7ac49828c21293a25b847e2a9b  ./build/contracts/eosio.system/eosio.system.wasm
+0a16e1dac533c4558698c8754f41219839ba2a2b75e517e65ea2537f76681f49  ./build/contracts/eosio.token/eosio.token.wasm
 ```
 
 ## MSIG Schedules
