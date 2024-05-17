@@ -43,8 +43,6 @@ $ shasum -a 256 ./build/contracts/eosio.fees/eosio.fees.wasm
 Create new systems accounts for:
 - `eosio.fees` (15/21) (`eosio`)
 - `eosio.reward` (15/21) (`eosio`)
-- `eosio.mware` (2/2) (`larosenonaka` + `winston1efm1`)
-- `fund.wram` (2/2) (`larosenonaka` + `winston1efm1`)
 
 ### MSIG Step 2 - [`upgrade.v3.4` contracts](https://github.com/eosnetworkfoundation/eos-system-contracts/releases/tag/v3.4.0) & EOS Tokenomics
 > https://bloks.io/msig/larosenonaka/tokenomics
@@ -90,9 +88,14 @@ Create new systems accounts for:
 ```
 
 #### Transfer EOS to buckets
-4.1. Transfer 350M from `eosio` to `market.wram`
-4.2. Transfer 15M from `eosio` to `eosio.mware`
-4.5. Remaining ~607M EOS in `eosio` to be distributed via producer pay & `eosio.saving`
+
+4.1. Create new bucket accounts
+- `eosio.mware` (2/2) (`larosenonaka` + `winston1efm1`)
+- `fund.wram` (2/2) (`larosenonaka` + `winston1efm1`)
+
+4.2. Transfer 350M from `eosio` to `fund.wram`
+4.3. Transfer 15M from `eosio` to `eosio.mware`
+4.4. Remaining ~607M EOS in `eosio` to be distributed via producer pay & `eosio.saving`
 
 #### Set vesting
 5.2. Adjust `inflation_pay_factor=60767` factor ratio to:
