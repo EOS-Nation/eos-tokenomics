@@ -91,6 +91,14 @@ Create new systems accounts for:
 
 4.2. Transfer 350M from `eosio` to `fund.wram`
 4.3. Transfer 15M from `eosio` to `eosio.mware`
+
+```json
+[
+    { "from": "eosio", "to": "fund.wram", "quantity": "350000000.0000 EOS", "memo": "EOS Tokenomics" },
+    { "from": "eosio", "to": "eosio.mware", "quantity": "15000000.0000 EOS", "memo": "EOS Tokenomics" },
+]
+```
+
 4.4. Remaining ~607M EOS in `eosio` to be distributed via producer pay & `eosio.saving`
 
 #### Set vesting
