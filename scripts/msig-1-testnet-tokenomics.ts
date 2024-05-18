@@ -90,4 +90,4 @@ transaction.actions.push({
     data: ""
 })
 
-fs.writeFileSync(`actions/msig-testnet-1-tokenomics.json`, JSON.stringify(transaction, null, 4));
+fs.writeFileSync(`actions/msig-1-testnet-tokenomics.json`, JSON.stringify(transaction, null, 4));
