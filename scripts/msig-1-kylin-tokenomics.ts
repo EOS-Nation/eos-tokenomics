@@ -12,6 +12,11 @@ for ( const setcontract of [ eosio, eosio_token, eosio_fees ] ) {
     transaction.actions.push(...setcontract.actions);
 }
 
+// 2.1. Unvest B1 tokens (35M EOS NET + 29.6M EOS CPU)
+const unvest_net_quantity = "35007851.2340 EOS";
+const unvest_cpu_quantity = "29662497.5145 EOS";
+unvest(unvest_net_quantity, unvest_cpu_quantity);
+
 // 3.1. Set max supply 2.1B
 const issuer = "eosio";
 const supply = "2100000000.0000 EOS";
@@ -29,7 +34,7 @@ setpayfactor(inflation_pay_factor, votepay_factor);
 // 5.3. Set 4 year halvening schedules (up to 20 years, 6 schedules)
 const schedules = [
     {"start_time": new Date("2024-05-17T00:00:00Z"), "continuous_rate": 0.03617097},
-    {"start_time": new Date("2024-05-21T00:00:00Z"), "continuous_rate": 0.01808549}
+    {"start_time": new Date("2024-05-23T00:00:00Z"), "continuous_rate": 0.01808549}
 ]
 setschedules(schedules);
 
