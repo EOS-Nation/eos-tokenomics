@@ -2,17 +2,13 @@ import * as fs from "fs";
 import { Serializer } from "@wharfkit/antelope";
 import * as Token from "../codegen/eosio.token.js"
 import * as System from "../codegen/eosio.system.js"
-import * as Time from "../codegen/time.eosn.js"
-import * as Saving from "../codegen/eosio.saving.js"
+import * as Fees from "../codegen/eosio.fees.js"
 import { transaction } from "./msig-helpers.js";
-
-// newaccounts
-import mware from '../actions/newaccount-eosio.mware.json';
-import wram from '../actions/newaccount-fund.wram.json';
 
 // setcontracts
 import eosio from '../actions/setcontract-eosio.system.json';
 import eosio_token from '../actions/setcontract-eosio.token.json';
+import eosio_fees from '../actions/setcontract-eosio.fees.json';
 
 // 1. Deploy new system contracts
 for ( const setcontract of [ eosio, eosio_token ] ) {
@@ -89,5 +85,23 @@ transaction.actions.push({
     }],
     data: ""
 })
+
+// 6.1. Deploy fees system contracts
+transaction.actions.push(...eosio_fees.actions);
+
+// 7.1 Set incoming fees to 100% go to REX via `donatetorex` strategy
+transaction.actions.push({
+    account: "eosio.fees",
+    name: "setstrategy",
+    authorization: [{
+        actor: "eosio.fees",
+        permission: "owner"
+    }],
+    data: Serializer.encode({object: Fees.Types.setstrategy.from({
+        "strategy": "donatetorex",
+        "weight": 10000
+    })}).hexString
+})
+
 
 fs.writeFileSync(`actions/msig-1-testnet-tokenomics.json`, JSON.stringify(transaction, null, 4));
