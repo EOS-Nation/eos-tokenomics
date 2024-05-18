@@ -24,10 +24,11 @@ export CDT_INSTALL_DIR="<path>/cdt/build"
 ./build.sh
 ```
 
+## Contract `sha-256` checksums
 ```bash
 $ shasum -a 256 ./build/contracts/**/*.wasm
-98343fddab84870825bf030848797166031709b3a0e8c68932b882078f062e1f  ./build/contracts/eosio.fees/eosio.fees.wasm
-4b872c873f970a852d0c4f343c0ef6bacb4a0c7ac49828c21293a25b847e2a9b  ./build/contracts/eosio.system/eosio.system.wasm
+ee20df88afc6c6d4683a6a63487bae995d90a3182374c4749aa7070dae791aab  ./build/contracts/eosio.fees/eosio.fees.wasm
+b78e2bfcceea88b337f195bb1e362a33cb5365aaaf02a2c32bcbf6698b1b832f  ./build/contracts/eosio.system/eosio.system.wasm
 0a16e1dac533c4558698c8754f41219839ba2a2b75e517e65ea2537f76681f49  ./build/contracts/eosio.token/eosio.token.wasm
 ```
 
