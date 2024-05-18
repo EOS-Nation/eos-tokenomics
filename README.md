@@ -33,20 +33,15 @@ $ shasum -a 256 ./build/contracts/**/*.wasm
 
 ## MSIG Schedules
 
-### MSIG Step 1 - New system accounts
-> https://bloks.io/msig/eosnationftw/newaccounts
-
-Create new systems accounts for:
-- `eosio.fees` (15/21) (`eosio`)
-- `eosio.reward` (15/21) (`eosio`)
-
-### MSIG Step 2 - [`upgrade.v3.4` contracts](https://github.com/eosnetworkfoundation/eos-system-contracts/releases/tag/v3.4.0) & EOS Tokenomics
+### MSIG `tokenomics` - [`upgrade.v3.4` contracts](https://github.com/eosnetworkfoundation/eos-system-contracts/releases/tag/v3.4.0) & EOS Tokenomics
 > https://bloks.io/msig/larosenonaka/tokenomics
 
 #### Deploy new v3.4.0 system contracts
 1.1. Deploy new `eosio` system contract
 1.2. Deploy new `eosio.token` contract
-1.3. Deploy new [`eosio.fees`](https://github.com/eosnetworkfoundation/eosio.fees) contract
+1.3. Create new systems accounts for:
+- `eosio.fees` (15/21) (`eosio`)
+- `eosio.reward` (15/21) (`eosio`)
 
 #### B1 unvest
 2.1. Unvest B1 tokens (35M EOS NET + 29.6M EOS CPU)
@@ -157,8 +152,15 @@ Create new systems accounts for:
 ]
 ```
 
+### MSIG `eosio.fees` configuration
+
+> https://bloks.io/msig/larosenonaka/eosio.fees
+
+#### Deploy new v3.4.0 system contracts
+6.1. Deploy new [`eosio.fees`](https://github.com/eosnetworkfoundation/eosio.fees/releases/tag/v1.0.0-rc1) contract
+
 #### Configure System Fees
-6.1 Set incoming fees to 100% go to REX via `donatetorex` strategy
+7.1 Set incoming fees to 100% go to REX via `donatetorex` strategy
 
 **eosio.fees::setstrategy**
 ```json
