@@ -36,6 +36,15 @@ $ shasum -a 256 ./build/contracts/**/*.wasm
 ### MSIG `tokenomics` - [`upgrade.v3.4` contracts](https://github.com/eosnetworkfoundation/eos-system-contracts/releases/tag/v3.4.0) & EOS Tokenomics
 > https://bloks.io/msig/larosenonaka/tokenomics
 
+0. Set MSIG execution time
+
+**time.eosn::checktime**
+```json
+{
+    "time": "2024-06-01T00:00:00.000Z"
+}
+```
+
 #### Deploy new v3.4.0 system contracts
 1.1. Deploy new `eosio` system contract
 1.2. Deploy new `eosio.token` contract
@@ -132,16 +141,15 @@ $ shasum -a 256 ./build/contracts/**/*.wasm
 {}
 ```
 
-5.5. Set MSIG execution time
+#### Set `eosio.savings` distribution
 
-**time.eosn::checktime**
-```json
-{
-    "time": "2024-06-01T00:00:00.000Z"
-}
-```
+6.1. Set `eosio.savings` ratios
 
-5.5. Set `eosio.savings` ratio for Staking Rewards/ENF/Labs (53.71% / 29.55% / 16.74%)
+| ratio  | receiver |
+|--------|----------|
+| 53.71% | Staking Rewards (`eosio.reward`)
+| 29.55% | ENF (`eosio.grants`)
+| 16.74% | Labs (`eoslabs.io`)
 
 **eosio.saving::setdistrib**
 ```json
@@ -157,10 +165,10 @@ $ shasum -a 256 ./build/contracts/**/*.wasm
 > https://bloks.io/msig/larosenonaka/eosio.fees
 
 #### Deploy new v3.4.0 system contracts
-6.1. Deploy new [`eosio.fees`](https://github.com/eosnetworkfoundation/eosio.fees/releases/tag/v1.0.0-rc1) contract
+7.1. Deploy new [`eosio.fees`](https://github.com/eosnetworkfoundation/eosio.fees/releases/tag/v1.0.0-rc1) contract
 
 #### Configure System Fees
-7.1 Set incoming fees to 100% go to REX via `donatetorex` strategy
+8.1 Set incoming fees to 100% go to REX via `donatetorex` strategy
 
 **eosio.fees::setstrategy**
 ```json
