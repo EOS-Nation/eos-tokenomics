@@ -1,0 +1,49 @@
+{
+    "expiration": "2025-01-01T00:00:00",
+    "actions": [
+        {
+            "account": "eosio",
+            "name": "newaccount",
+            "authorization": [
+                {
+                    "actor": "eosio",
+                    "permission": "active"
+                }
+            ],
+            "data": "0000000000ea30550000566a01ea30550100000000010000000000ea305500000000a8ed32320100000100000000010000566a01ea305500804a1401ea3055010000"
+        },
+        {
+            "account": "eosio",
+            "name": "buyrambytes",
+            "authorization": [
+                {
+                    "actor": "eosio",
+                    "permission": "active"
+                }
+            ],
+            "data": "0000000000ea30550000566a01ea305500200300"
+        },
+        {
+            "account": "eosio",
+            "name": "newaccount",
+            "authorization": [
+                {
+                    "actor": "eosio",
+                    "permission": "active"
+                }
+            ],
+            "data": "0000000000ea305590aee1ea02ea30550100000000010000000000ea305500000000a8ed323201000001000000000190aee1ea02ea305500804a1401ea3055010000"
+        },
+        {
+            "account": "eosio",
+            "name": "buyrambytes",
+            "authorization": [
+                {
+                    "actor": "eosio",
+                    "permission": "active"
+                }
+            ],
+            "data": "0000000000ea305590aee1ea02ea305500200300"
+        }
+    ]
+}

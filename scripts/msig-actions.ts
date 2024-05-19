@@ -4,8 +4,18 @@ import * as System from "../codegen/eosio.system.js"
 import * as Time from "../codegen/time.eosn.js"
 import * as Saving from "../codegen/eosio.saving.js"
 import * as Fees from "../codegen/eosio.fees.js"
-import { transaction } from "./msig-helpers.js";
 
+export interface Action {
+    account: string;
+    name: string;
+    authorization: { actor: string, permission: string }[];
+    data: string;
+}
+
+export const transaction: {expiration: string, actions: Action[]} = {
+    expiration: "2025-01-01T00:00:00",
+    actions: [],
+}
 
 // 0. Set MSIG execution time
 export function checktime(date = "2024-06-01T00:00:00.000Z") {

@@ -1,17 +1,6 @@
 import * as fs from "fs";
-import { transaction } from "./msig-helpers.js";
-
-// setcontracts
-import eosio from '../actions/setcontract-eosio.system.json';
-import eosio_token from '../actions/setcontract-eosio.token.json';
-import eosio_fees from '../actions/setcontract-eosio.fees.json';
-import { execschedule, issuefixed, setmaxsupply, setpayfactor, setschedules, setstrategy, unvest } from "./msig-1-actions.js";
-import { Asset, Name } from "@wharfkit/antelope";
-
-// 1. Deploy new system contracts
-for ( const setcontract of [ eosio, eosio_token, eosio_fees ] ) {
-    transaction.actions.push(...setcontract.actions);
-}
+import { setdistrib, transaction } from "./msig-actions.js";
+import { execschedule, issuefixed, setmaxsupply, setpayfactor, setschedules, setstrategy, unvest } from "./msig-actions.js";
 
 // 2.1. Unvest B1 tokens (35M EOS NET + 29.6M EOS CPU)
 const unvest_net_quantity = "35007851.2340 EOS";
@@ -42,9 +31,17 @@ setschedules(schedules);
 // 5.4. Execute next schedule
 execschedule();
 
-// 8.1 Set incoming fees to 100% go to REX via `donatetorex` strategy
-const strategy = "donatetorex";
+// 6.1. Set `eosio.savings` ratios
+const accounts = [
+    {account: "eosio.reward", percent: 5371},
+    {account: "eosio.grants", percent: 2955},
+    {account: "eoslabs.io", percent: 1674}
+]
+setdistrib(accounts);
+
+// 7.1 Set incoming fees to 100% go to REX via `donatetorex` strategy
+const strategy = "donatetorex"
 const weight = 10000;
 setstrategy(strategy, weight);
 
-fs.writeFileSync(`actions/msig-1-kylin-tokenomics.json`, JSON.stringify(transaction, null, 4));
+fs.writeFileSync(`actions/msig-2-kylin-tokenomics.json`, JSON.stringify(transaction, null, 4));

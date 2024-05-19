@@ -1,0 +1,104 @@
+{
+    "expiration": "2025-01-01T00:00:00",
+    "actions": [
+        {
+            "account": "eosio",
+            "name": "unvest",
+            "authorization": [
+                {
+                    "actor": "eosio",
+                    "permission": "active"
+                }
+            ],
+            "data": "0000000000004038d42c4e825100000004454f530000000029ed39104500000004454f5300000000"
+        },
+        {
+            "account": "eosio.token",
+            "name": "setmaxsupply",
+            "authorization": [
+                {
+                    "actor": "eosio",
+                    "permission": "active"
+                }
+            ],
+            "data": "0000000000ea305500508a711913000004454f5300000000"
+        },
+        {
+            "account": "eosio.token",
+            "name": "issuefixed",
+            "authorization": [
+                {
+                    "actor": "eosio",
+                    "permission": "active"
+                }
+            ],
+            "data": "0000000000ea305500508a711913000004454f53000000000e454f5320546f6b656e6f6d696373"
+        },
+        {
+            "account": "eosio",
+            "name": "setpayfactor",
+            "authorization": [
+                {
+                    "actor": "eosio",
+                    "permission": "active"
+                }
+            ],
+            "data": "5fed000000000000409c000000000000"
+        },
+        {
+            "account": "eosio",
+            "name": "setschedule",
+            "authorization": [
+                {
+                    "actor": "eosio",
+                    "permission": "active"
+                }
+            ],
+            "data": "009e4666acdf6d5a0085a23f"
+        },
+        {
+            "account": "eosio",
+            "name": "setschedule",
+            "authorization": [
+                {
+                    "actor": "eosio",
+                    "permission": "active"
+                }
+            ],
+            "data": "00874e66351b54b00085923f"
+        },
+        {
+            "account": "eosio",
+            "name": "execschedule",
+            "authorization": [
+                {
+                    "actor": "eosio",
+                    "permission": "active"
+                }
+            ],
+            "data": ""
+        },
+        {
+            "account": "eosio.saving",
+            "name": "setdistrib",
+            "authorization": [
+                {
+                    "actor": "eosio.saving",
+                    "permission": "active"
+                }
+            ],
+            "data": "0390aee1ea02ea3055fb1480f3349701ea30558b0b000075001f1331558a06"
+        },
+        {
+            "account": "eosio.fees",
+            "name": "setstrategy",
+            "authorization": [
+                {
+                    "actor": "eosio.fees",
+                    "permission": "owner"
+                }
+            ],
+            "data": "00baba34ab6c264d1027"
+        }
+    ]
+}

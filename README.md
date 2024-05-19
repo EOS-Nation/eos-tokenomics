@@ -32,12 +32,20 @@ b78e2bfcceea88b337f195bb1e362a33cb5365aaaf02a2c32bcbf6698b1b832f  ./build/contra
 0a16e1dac533c4558698c8754f41219839ba2a2b75e517e65ea2537f76681f49  ./build/contracts/eosio.token/eosio.token.wasm
 ```
 
-## MSIG Schedules
+#### ❗️ PREREQUISITE - Deployed `v3.4.0` system contracts
 
-### MSIG `tokenomics` - [`upgrade.v3.4` contracts](https://github.com/eosnetworkfoundation/eos-system-contracts/releases/tag/v3.4.0) & EOS Tokenomics
-> https://bloks.io/msig/larosenonaka/tokenomics
+https://github.com/eosnetworkfoundation/eos-system-contracts/releases
+- Create new systems accounts for:
+  - `eosio.fees` (15/21) (`eosio` + `@eosio.code`)
+  - `eosio.reward` (15/21) (`eosio` + `@eosio.code`)
+- Deploy new `eosio` system contract
+- Deploy new `eosio.token` contract
+- Deploy new [`eosio.fees`](https://github.com/eosnetworkfoundation/eosio.fees/releases/tag/v1.0.0-rc1) contract
 
-0. Set MSIG execution time
+
+### MSIG - EOS Tokenomics
+
+1. Set MSIG execution time
 
 **time.eosn::checktime**
 ```json
@@ -45,13 +53,6 @@ b78e2bfcceea88b337f195bb1e362a33cb5365aaaf02a2c32bcbf6698b1b832f  ./build/contra
     "time": "2024-06-01T00:00:00.000Z"
 }
 ```
-
-#### Deploy new v3.4.0 system contracts
-1.1. Deploy new `eosio` system contract
-1.2. Deploy new `eosio.token` contract
-1.3. Create new systems accounts for:
-- `eosio.fees` (15/21) (`eosio`)
-- `eosio.reward` (15/21) (`eosio`)
 
 #### B1 unvest
 2.1. Unvest B1 tokens (35M EOS NET + 29.6M EOS CPU)
@@ -93,7 +94,6 @@ b78e2bfcceea88b337f195bb1e362a33cb5365aaaf02a2c32bcbf6698b1b832f  ./build/contra
 4.1. Create new distribution accounts
 - `eosio.mware` (2/2) (`larosenonaka` + `winston1efm1`)
 - `fund.wram` (2/2) (`larosenonaka` + `winston1efm1`)
-
 4.2. Transfer 350M from `eosio` to `fund.wram`
 4.3. Transfer 15M from `eosio` to `eosio.mware`
 
@@ -161,15 +161,10 @@ b78e2bfcceea88b337f195bb1e362a33cb5365aaaf02a2c32bcbf6698b1b832f  ./build/contra
 ]
 ```
 
-### MSIG `eosio.fees` configuration
-
 > https://bloks.io/msig/larosenonaka/eosio.fees
 
-#### Deploy new v3.4.0 system contracts
-7.1. Deploy new [`eosio.fees`](https://github.com/eosnetworkfoundation/eosio.fees/releases/tag/v1.0.0-rc1) contract
-
 #### Configure System Fees
-8.1 Set incoming fees to 100% go to REX via `donatetorex` strategy
+7.1 Set incoming fees to 100% go to REX via `donatetorex` strategy
 
 **eosio.fees::setstrategy**
 ```json
