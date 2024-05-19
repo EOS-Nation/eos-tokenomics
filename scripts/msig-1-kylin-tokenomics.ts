@@ -6,6 +6,7 @@ import eosio from '../actions/setcontract-eosio.system.json';
 import eosio_token from '../actions/setcontract-eosio.token.json';
 import eosio_fees from '../actions/setcontract-eosio.fees.json';
 import { execschedule, issuefixed, setmaxsupply, setpayfactor, setschedules, setstrategy, unvest } from "./msig-1-actions.js";
+import { Asset, Name } from "@wharfkit/antelope";
 
 // 1. Deploy new system contracts
 for ( const setcontract of [ eosio, eosio_token, eosio_fees ] ) {
@@ -15,7 +16,7 @@ for ( const setcontract of [ eosio, eosio_token, eosio_fees ] ) {
 // 2.1. Unvest B1 tokens (35M EOS NET + 29.6M EOS CPU)
 const unvest_net_quantity = "35007851.2340 EOS";
 const unvest_cpu_quantity = "29662497.5145 EOS";
-unvest(unvest_net_quantity, unvest_cpu_quantity);
+unvest("b1", unvest_net_quantity, unvest_cpu_quantity);
 
 // 3.1. Set max supply 2.1B
 const issuer = "eosio";
@@ -42,7 +43,7 @@ setschedules(schedules);
 execschedule();
 
 // 8.1 Set incoming fees to 100% go to REX via `donatetorex` strategy
-const strategy = "donatetorex"
+const strategy = "donatetorex";
 const weight = 10000;
 setstrategy(strategy, weight);
 

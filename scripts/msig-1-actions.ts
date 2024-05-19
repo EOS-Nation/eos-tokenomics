@@ -17,14 +17,14 @@ export function checktime(date = "2024-06-01T00:00:00.000Z") {
             permission: "active"
         }],
         data: Serializer.encode({object: Time.Types.checktime.from({
-            time: new Date(date)
-        })}).hexString
+            time: new Date(date),
+        })}).hexString,
     })
 }
 
 
 // 2.1. Unvest B1 tokens (35M EOS NET + 29.6M EOS CPU)
-export function unvest(account = "b1", unvest_net_quantity = "35007851.2340 EOS", unvest_cpu_quantity = "29662497.5145 EOS") {
+export function unvest(account: string, unvest_net_quantity: string, unvest_cpu_quantity: string) {
     transaction.actions.push({
         account: "eosio",
         name: "unvest",
@@ -41,7 +41,7 @@ export function unvest(account = "b1", unvest_net_quantity = "35007851.2340 EOS"
 }
 
 // 3.1. Set max supply 2.1B
-export function setmaxsupply( issuer = "eosio", maximum_supply = "2100000000.0000 EOS" ) {
+export function setmaxsupply( issuer: string, maximum_supply: string) {
     transaction.actions.push({
         account: "eosio.token",
         name: "setmaxsupply",
@@ -57,7 +57,7 @@ export function setmaxsupply( issuer = "eosio", maximum_supply = "2100000000.000
 }
 
 // 3.2. Issue fixed supply up to 2.1B (expected ~972M EOS)
-export function issuefixed( to = "eosio", supply = "2100000000.0000 EOS", memo = "EOS Tokenomics" ) {
+export function issuefixed( to: string, supply: string, memo: string) {
     transaction.actions.push({
         account: "eosio.token",
         name: "issuefixed",
@@ -149,7 +149,7 @@ export function setdistrib(accounts: {account: string, percent: number}[]) {
 }
 
 // 7.1 Set incoming fees to 100% go to REX via `donatetorex` strategy
-export function setstrategy(strategy = "donatetorex", weight = 10000) {
+export function setstrategy(strategy: string, weight: number) {
     transaction.actions.push({
         account: "eosio.fees",
         name: "setstrategy",

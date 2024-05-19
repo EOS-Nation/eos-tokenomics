@@ -14,14 +14,14 @@ import { checktime, execschedule, issuefixed, send_transfers, setdistrib, setmax
 checktime("2024-06-01T00:00:00.000Z");
 
 // 1. Deploy new system contracts
-for ( const setcontract of [ eosio, eosio_token ] ) {
+for ( const setcontract of [ eosio_token, eosio ] ) {
     transaction.actions.push(...setcontract.actions);
 }
 
 // 2.1. Unvest B1 tokens (35M EOS NET + 29.6M EOS CPU)
 const unvest_net_quantity = "35007851.2340 EOS";
 const unvest_cpu_quantity = "29662497.5145 EOS";
-unvest(unvest_net_quantity, unvest_cpu_quantity);
+unvest("b1", unvest_net_quantity, unvest_cpu_quantity);
 
 // 3.1. Set max supply 2.1B
 const issuer = "eosio";
