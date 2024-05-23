@@ -1,14 +1,21 @@
 import { Chains } from '@wharfkit/common';
-import { APIClient, Name, PackedTransaction, Transaction } from '@wharfkit/antelope';
+import { APIClient, Bytes, Checksum256, Name, PackedTransaction, Serializer, Transaction } from '@wharfkit/antelope';
 import { ABI } from '@wharfkit/antelope';
 import * as system from "../build/contracts/eosio.system/eosio.system.abi.json";
+import { program } from 'commander';
 
+// Command line arguments
+program
+  .requiredOption('--proposal <string>', "proposal name", "fees.test")
+  .requiredOption('--proposer <string>', "proposer name", "eosnationftw");
+
+const commands = program.parse();
+const { proposal, proposer } = commands.opts();
+
+// Chain
 const abi = ABI.from(system);
-const url = Chains.EOS.url;
+const url = Chains.KylinTestnet.url;
 const api = new APIClient({url});
-
-const proposer = "eosnationftw";
-const proposal = "bloks.test4";
 
 console.log("MSIG Proposal Decoder");
 console.log("----------------------");
@@ -32,17 +39,36 @@ async function getTransactionFromMSIG(proposer: string, proposal: string) {
 
 function decodeTransaction(unpacked: Transaction, abi: ABI ) {
     const actions = [];
-    let index = 0;
+    let index = 1;
     for ( const action of unpacked.actions ) {
-        const decoded = action.decodeData(abi);
         const data: any = {};
-        for ( let [key, value] of Object.entries(decoded) ) {
-            if ( value && value.toJSON ) value = value.toJSON();
-            if ( key == "abi") value = "...";
-            if ( key == "code") value = "...";
-            data[key] = value;
+        const account = action.account.toString();
+        try {
+
+
+            const decoded = action.decodeData(abi);
+            for ( let [key, value] of Object.entries(decoded) ) {
+                // Sha256 hash the code and abi for eosio contract
+                if ( value && value.toJSON ) value = value.toJSON();
+                if ( account == "eosio") {
+                    if ( key == "abi") {
+                        const decodedAbi = Serializer.decode({data: value, type: ABI})
+                        const jsonabi = ABI.from(decodedAbi);
+                        value = Checksum256.hash(Bytes.fromString(JSON.stringify(jsonabi),'utf8').array).hexString;
+                    }
+                    if ( key == "code") {
+                        value = Checksum256.hash(value).hexString;
+                    }
+                }
+                data[key] = value;
+            }
+            actions.push({action_index: index++, account, action: action.name.toString(), data});
+
+
+        } catch (error) {
+            // console.error(error);
+            actions.push({action_index: index++, account, action: action.name.toString(), hex_data: action.data.hexString});
         }
-        actions.push({action_index: index++, account: action.account.toString(), action: action.name.toString(), data});
     }
     return actions;
 }

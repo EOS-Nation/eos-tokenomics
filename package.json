@@ -10,6 +10,7 @@
   "dependencies": {
     "@wharfkit/antelope": "^1.0.7",
     "@wharfkit/common": "^1.2.0",
-    "@wharfkit/contract": "^1.1.5"
+    "@wharfkit/contract": "^1.1.5",
+    "commander": "^12.1.0"
   }
 }

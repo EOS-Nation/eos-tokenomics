@@ -2,13 +2,14 @@ import * as fs from "fs";
 import { transaction } from "./msig-actions.js";
 
 // setcontracts
-import eosio_fees from '../actions/setcontract-eosio.fees.json';
+import code_eosio_fees from '../actions/setcode-eosio.fees.json';
+import abi_eosio_fees from '../actions/setabi-eosio.fees.json';
 
 // actions
 import { setstrategy } from "./msig-actions.js";
 
 // ❗️ PREREQUISITE Deploy new fees contracts
-for ( const setcontract of [ eosio_fees ] ) {
+for ( const setcontract of [ code_eosio_fees, abi_eosio_fees ] ) {
     transaction.actions.push(...setcontract.actions);
 }
 
