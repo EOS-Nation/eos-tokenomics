@@ -27,9 +27,16 @@ export CDT_INSTALL_DIR="<path>/cdt/build"
 ## Contract `sha-256` checksums
 ```bash
 $ shasum -a 256 ./build/contracts/**/*.wasm
-ee20df88afc6c6d4683a6a63487bae995d90a3182374c4749aa7070dae791aab  ./build/contracts/eosio.fees/eosio.fees.wasm
+c54c983e9702d395af6262e7235aaee1f1e27b7126f9e19bf5964d63b4a7d8fa  ./build/contracts/eosio.fees/eosio.fees.wasm
 b78e2bfcceea88b337f195bb1e362a33cb5365aaaf02a2c32bcbf6698b1b832f  ./build/contracts/eosio.system/eosio.system.wasm
 0a16e1dac533c4558698c8754f41219839ba2a2b75e517e65ea2537f76681f49  ./build/contracts/eosio.token/eosio.token.wasm
+```
+
+```bash
+$ shasum -a 256 ./build/contracts/**/*.abi
+1b7153927691bc464602f0aadd8badfa25e92926342e6294967ad2f2cc66564e  ./build/contracts/eosio.fees/eosio.fees.abi
+ce92b0030ef8413c55de96bf807a5740181d02880b825ff98b7fe9b471d999c2  ./build/contracts/eosio.system/eosio.system.abi
+6961da382f16caddc255acd287d3f19011aa1d4ddcc7be5955768b4629ec9b16  ./build/contracts/eosio.token/eosio.token.abi
 ```
 
 #### ❗️ PREREQUISITE - Deployed `v3.4.0` system contracts

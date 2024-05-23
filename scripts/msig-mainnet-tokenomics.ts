@@ -11,7 +11,6 @@ import reward from '../actions/newaccount-eosio.reward.json';
 import eosio_code from '../actions/setcode-eosio.json';
 import eosio_abi from '../actions/setabi-eosio.json';
 import eosio_token from '../actions/setcontract-eosio.token.json';
-// import eosio_fees from '../actions/setcontract-eosio.fees.json';
 
 // actions
 import { checktime, execschedule, issuefixed, send_transfers, setdistrib, setmaxsupply, setpayfactor, setschedules, setstrategy, unvest } from "./msig-actions.js";
@@ -82,10 +81,5 @@ const accounts = [
     {account: "eoslabs.io", percent: 1674}
 ]
 setdistrib(accounts);
-
-// // 7.1 Set incoming fees to 100% go to REX via `donatetorex` strategy
-// const strategy = "donatetorex"
-// const weight = 10000;
-// setstrategy(strategy, weight);
 
 fs.writeFileSync(`actions/msig-mainnet-tokenomics.json`, JSON.stringify(transaction, null, 4));

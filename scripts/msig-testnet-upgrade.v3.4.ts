@@ -12,4 +12,4 @@ for ( const setcontract of [ eosio_code, eosio_abi, eosio_token, eosio_fees ] ) 
     transaction.actions.push(...setcontract.actions);
 }
 
-fs.writeFileSync(`actions/msig-1-upgrade.v3.4.json`, JSON.stringify(transaction, null, 4));
+fs.writeFileSync(`actions/msig-testnet-upgrade.v3.4.json`, JSON.stringify(transaction, null, 4));

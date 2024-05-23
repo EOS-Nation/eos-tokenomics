@@ -44,4 +44,4 @@ const strategy = "donatetorex"
 const weight = 10000;
 setstrategy(strategy, weight);
 
-fs.writeFileSync(`actions/msig-2-kylin-tokenomics.json`, JSON.stringify(transaction, null, 4));
+fs.writeFileSync(`actions/msig-testnet-tokenomics.json`, JSON.stringify(transaction, null, 4));
