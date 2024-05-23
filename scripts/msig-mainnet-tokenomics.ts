@@ -8,8 +8,7 @@ import fees from '../actions/newaccount-eosio.fees.json';
 import reward from '../actions/newaccount-eosio.reward.json';
 
 // setcontracts
-import eosio_code from '../actions/setcode-eosio.json';
-import eosio_abi from '../actions/setabi-eosio.json';
+import eosio_system from '../actions/setcontract-eosio.system.json';
 import eosio_token from '../actions/setcontract-eosio.token.json';
 
 // actions
@@ -21,7 +20,7 @@ for ( const newaccount of [ fees, reward ] ) {
 }
 
 // ❗️ PREREQUISITE Deploy new system contracts
-for ( const setcontract of [ eosio_code, eosio_abi, eosio_token ] ) {
+for ( const setcontract of [ eosio_system, eosio_token ] ) {
     transaction.actions.push(...setcontract.actions);
 }
 
