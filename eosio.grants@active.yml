@@ -1,0 +1,14 @@
+threshold: 2
+accounts:
+- permission:
+    actor: everythngeos
+    permission: active
+  weight: 1
+- permission:
+    actor: larosenonaka
+    permission: active
+  weight: 1
+- permission:
+    actor: trust.hodl
+    permission: active
+  weight: 1

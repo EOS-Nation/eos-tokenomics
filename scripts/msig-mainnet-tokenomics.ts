@@ -35,7 +35,7 @@ unvest("b1", unvest_net_quantity, unvest_cpu_quantity);
 // 3.1. Set max supply 2.1B
 const issuer = "eosio";
 const supply = "2100000000.0000 EOS";
-const memo = "EOS Tokenomics"
+const memo = "New Era for EOS"
 setmaxsupply(issuer, supply);
 
 // 3.2. Issue fixed supply up to 2.1B (expected ~972M EOS)
@@ -49,8 +49,8 @@ for ( const newaccount of [ mware, wram ] ) {
 // 4.2. Transfer 350M from `eosio` to `fund.wram`
 // 4.3. Transfer 15M from `eosio` to `eosio.mware`
 const transfers = [
-    { from: "eosio", to: "fund.wram", quantity: "350000000.0000 EOS", memo: "EOS Tokenomics" },
-    { from: "eosio", to: "eosio.mware", quantity: "15000000.0000 EOS", memo: "EOS Tokenomics" },
+    { from: "eosio", to: "fund.wram", quantity: "350000000.0000 EOS", memo },
+    { from: "eosio", to: "eosio.mware", quantity: "15000000.0000 EOS", memo },
 ]
 send_transfers(transfers);
 
