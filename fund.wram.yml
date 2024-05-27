@@ -10,10 +10,10 @@ active:
   threshold: 2
   accounts:
   - permission:
-      actor: larosenonaka
+      actor: eosio.grants
       permission: active
     weight: 1
   - permission:
-      actor: winston1efm1
+      actor: eoslabs.io
       permission: active
     weight: 1

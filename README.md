@@ -99,8 +99,8 @@ https://github.com/eosnetworkfoundation/eos-system-contracts/releases
 #### Transfer to EOS Distribution
 
 4.1. Create new distribution accounts
-- `eosio.mware` (2/2) (`larosenonaka` + `winston1efm1`)
-- `fund.wram` (2/2) (`larosenonaka` + `winston1efm1`)
+- `eosio.mware` (2/2) (`eosio.grants` + `eoslabs.io`)
+- `fund.wram` (2/2) (`eosio.grants` + `eoslabs.io`)
 4.2. Transfer 350M from `eosio` to `fund.wram`
 4.3. Transfer 15M from `eosio` to `eosio.mware`
 
