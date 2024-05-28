@@ -1,6 +1,41 @@
 # EOS Tokenomics (System Contract v3.4.0 Upgrade)
 
-> [Release Notes](https://github.com/eosnetworkfoundation/eos-system-contracts/releases/tag/v3.4.0)
+> [v3.4.0 Release Notes](https://github.com/eosnetworkfoundation/eos-system-contracts/releases/tag/v3.4.0)
+
+### Token distribution flowchart
+
+```mermaid
+graph TD
+    eosio --> |3.61% continuous_rate=0.03617097| annual_rate(Annual Rate 75.8M EOS/year)
+    annual_rate --> |16.45% inflation_pay_factor=60767| producer(Block Producer Pay 12.4M EOS/year)
+    vote_payfactor --> | 75% votepay_factor=40000 | eosio.vpay(eosio.vpay 9.3M EOS/year)
+    vote_payfactor --> | 25% votepay_factor=40000 | eosio.bpay(eosio.bpay 3.1M EOS/year)
+    producer --> vote_payfactor{% factor}
+    eosio --> |100% system fees| eosio.fees
+    eosio.fees --> weights_fees{% weights}
+    weights_fees -.-> |100% Donate To REX 1.0| rex
+    weights_fees -.-> |100% Distribute to eosio.bpay| bpay(21 producers)
+    annual_rate --> |83.55% unallocated bucket| eosio.saving(eosio.saving 63.3M EOS/year)
+    percent --> |53.71% percent=5371| eosio.reward(eosio.reward 34M EOS/year)
+    percent --> |29.55% percent=2955| eosio.grants(eosio.grants 18.7M EOS/year)
+    percent --> |16.74% percent=1674| eoslabs.io(eoslabs.io 10.6M EOS/year)
+    eosio.saving --> percent{% percent}
+    eosio.reward --> weights_rewards{% weights}
+    weights_rewards --> |100% Donate To REX 2.0| rex{eosio.rex}
+```
+
+### Allocations (Annual Rate)
+
+| Sender | Receiver | Allocation (%)| Amount/year |
+|--------|-------|------------|--------|
+| eosio  |       | 100% | 75,959,037 EOS |
+| eosio | eosio.saving | 83.55% | 63,300,000 EOS |
+| eosio | producer pay | 16.45% | 12,400,000 EOS |
+| producer pay | eosio.vpay | 75% | 9,375,035 EOS |
+| producer pay | eosio.bpay | 25% | 3,125,011 EOS |
+| eosio.saving | eosio.reward | 53.71% | 34,083,823 EOS |
+| eosio.saving | eosio.grants | 29.55% | 18,752,131 EOS |
+| eosio.saving | eoslabs.io | 16.74% | 10,623,034 EOS |
 
 ## [Build CDT](https://github.com/AntelopeIO/cdt) (`v4.0.1`)
 
