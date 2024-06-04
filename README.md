@@ -184,9 +184,9 @@ https://github.com/eosnetworkfoundation/eos-system-contracts/releases
 {}
 ```
 
-#### Set `eosio.savings` distribution
+#### Set `eosio.saving` distribution
 
-6.1. Set `eosio.savings` ratios
+6.1. Set `eosio.saving` ratios
 
 | ratio  | receiver |
 |--------|----------|
