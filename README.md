@@ -215,3 +215,14 @@ https://github.com/eosnetworkfoundation/eos-system-contracts/releases
     "weight": 10000
 }
 ```
+
+### Init Fees
+
+7.2 Initialize fees contract to 600 seconds per epoch period
+
+**eosio.fees::init**
+```json
+{
+    "epoch_period": 600
+}
+```
